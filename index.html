@@ -1,206 +1,190 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"/>
-    <title>Aigis Themed</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlAuA5eDqVxulmTgkGYPe3SLwjqFof8JDhOtZM" />
 
-</head>
-<body>
+    <title>Aigis</title>
+  </head>
+  <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
-        <div class="image-container">
-            <img src="Files/Images/Aigis_Battle.png" 
-                 alt="Loading Image" 
-                 class="loading-image grayscale" 
-                 id="loadingImage">
-            <div class="reveal-mask" id="revealMask"></div>
-        </div>
+      <div class="image-container">
+        <img
+          src="Files/Images/Aigis_Battle.png"
+          alt="Loading Image"
+          class="loading-image grayscale"
+          id="loadingImage"
+        />
+        <div class="reveal-mask" id="revealMask"></div>
+      </div>
     </div>
 
     <!-- Background Music -->
     <audio id="backgroundMusic" loop>
-        <source src="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlGaApKpBCIotdCJDbiclE3YZMjH0aBAXzhp4L" type="audio/wav">
-        <!-- Fallback for browsers that don't support the audio element -->
-        Your browser does not support the audio element.
+      <source
+        src="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlGaApKpBCIotdCJDbiclE3YZMjH0aBAXzhp4L"
+        type="audio/wav"
+      />
+      <!-- Fallback for browsers that don't support the audio element -->
+      Your browser does not support the audio element.
     </audio>
 
-    <!-- Main Website Content -->
-    <div class="main-content" id="mainContent">
-        <div class="content">
-            <div id="Text">
-                <span class="cursor">|</span>
-                <script>
-                const text = "Hello, this is a typing animation with fisheye effects!";
-                const textElement = document.getElementById('text');
-
-                function typeText(element, text, speed = 100) {
-                    let index = 0;
-                    
-                    function addChar() {
-                        if (index < text.length) {
-                            const char = document.createElement('span');
-                            char.className = 'char';
-                            char.textContent = text[index];
-                            char.style.setProperty('--i', index);
-                            
-                            const cursor = element.querySelector('.cursor');
-                            if (cursor) {
-                                element.insertBefore(char, cursor);
-                            } else {
-                                element.appendChild(char);
-                            }
-                            index++;
-                            
-                            setTimeout(addChar, speed);
-                        } else {
-                            // Reset after a pause
-                            setTimeout(() => {
-                                // Clear all characters but keep cursor
-                                const chars = element.querySelectorAll('.char');
-                                chars.forEach(char => char.remove());
-                                
-                                // Make sure cursor exists
-                                if (!element.querySelector('.cursor')) {
-                                    const cursor = document.createElement('span');
-                                    cursor.className = 'cursor';
-                                    element.appendChild(cursor);
-                                }
-                                
-                                index = 0;
-                                setTimeout(addChar, 1000);
-                            }, 3000);
-                        }
-                    }
-                    
-                    addChar();
-                }
-
-                // Start typing animation
-                typeText(textElement, text, 80);
-
-                </script>
-            </div>
+    <nav>
+      <div class="nav-container">
+        <div class="button-container">
+          <button onclick="scrollToSection(0)">Home</button>
+          <button onclick="scrollToSection(1)">Software</button>
+          <button onclick="scrollToSection(2)">Apps</button>
+          <button onclick="scrollToSection(3)">Websites</button>
+          <button onclick="scrollToSection(4)">FAQ</button>
         </div>
+      </div>
+    </nav>
+
+    <!-- Main Website Content -->
+    <div class="main-content" id="mainContent"></div>
+    <div class="aspect-container">
+      <!-- Horizontal scrollable content -->
+      <div id="scrollContainer" class="scroll-container">
+        <div id="section1" class="section section1">
+          <h2>Section 1</h2>  
+        </div>
+        <div id="section2" class="section section2">
+          <h2>Section 2</h2>
+        </div>
+        <div id="section3" class="section section3">
+          <h2>Section 3</h2>
+        </div>
+        <div id="section4" class="section section4">
+          <h2>Section 4</h2>
+        </div>
+        <div id="section5" class="section section5">
+          <h2>Section 5</h2>
+        </div>
+      </div>
     </div>
-
     <script>
-        class LoadingScreen {
-            constructor() {
-                this.progress = 0;
-                this.loadingScreen = document.getElementById('loadingScreen');
-                this.mainContent = document.getElementById('mainContent');
-                this.loadingImage = document.getElementById('loadingImage');
-                this.revealMask = document.getElementById('revealMask');
-                this.backgroundMusic = document.getElementById('backgroundMusic');
-                
-                this.init();
-            }
+      class LoadingScreen {
+        constructor() {
+          this.progress = 0;
+          this.loadingScreen = document.getElementById("loadingScreen");
+          this.mainContent = document.getElementById("mainContent");
+          this.loadingImage = document.getElementById("loadingImage");
+          this.revealMask = document.getElementById("revealMask");
+          this.backgroundMusic = document.getElementById("backgroundMusic");
 
-            init() {
-                // Simulate loading process
-                this.simulateLoading();
-            }
-
-            simulateLoading() {
-                const loadingDuration = 3000; // 3 seconds total
-                const startTime = Date.now();
-                
-                const animate = () => {
-                    const elapsed = Date.now() - startTime;
-                    const progress = Math.min((elapsed / loadingDuration) * 100, 100);
-                    
-                    this.updateProgress(progress);
-                    
-                    if (progress < 100) {
-                        requestAnimationFrame(animate);
-                    } else {
-                        this.completeLoading();
-                    }
-                };
-                
-                animate();
-            }
-
-            updateProgress(targetProgress) {
-                this.progress = targetProgress;
-                
-                // Update image reveal effect
-                this.updateImageReveal();
-            }
-
-            updateImageReveal() {
-                // Update the reveal mask
-                this.revealMask.style.setProperty('--progress', `${this.progress}%`);
-                
-                // Gradually remove grayscale as loading progresses
-                const grayscaleAmount = Math.max(0, 100 - this.progress);
-                const brightness = 0.7 + (this.progress / 100) * 0.3;
-                this.loadingImage.style.filter = `grayscale(${grayscaleAmount}%) brightness(${brightness})`;
-            
-            }
-
-            completeLoading() {
-                // Final reveal - full color
-                this.loadingImage.classList.remove('grayscale');
-                this.loadingImage.style.filter = 'none';
-                
-                // Apply blur effect
-                setTimeout(() => {
-                    
-                    // Remove blur and show main content
-                    setTimeout(() => {
-                        this.loadingScreen.classList.add('blur');
-                        this.loadingScreen.classList.add('hidden');
-                        this.mainContent.classList.add('loaded');
-                        
-                        // Play background music
-                        this.playBackgroundMusic();
-                        
-                        // Remove loading screen from DOM after transition
-                        setTimeout(() => {
-                            this.loadingScreen.style.display = 'none';
-                        }, 500);
-                    }, 800);
-                }, 500);
-            }
-
-            playBackgroundMusic() {
-                // Try to play background music
-                this.backgroundMusic.play().catch(error => {
-                    console.log('Audio autoplay was prevented:', error);
-                    // Add a user interaction handler to play music
-                    document.addEventListener('click', () => {
-                        this.backgroundMusic.play();
-                    }, { once: true });
-                });
-            }
+          this.init();
         }
 
-        // Initialize loading screen when page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            new LoadingScreen();
-        });
+        init() {
+          // Simulate loading process
+          this.simulateLoading();
+        }
 
-        // Main website functions
-        function showDeviceInfo() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            const isMobile = width <= 768;
-            
-            const info = document.getElementById('device-info');
-            info.innerHTML = `
+        simulateLoading() {
+          const loadingDuration = 3000; // 3 seconds total
+          const startTime = Date.now();
+
+          const animate = () => {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min((elapsed / loadingDuration) * 100, 100);
+
+            this.updateProgress(progress);
+
+            if (progress < 100) {
+              requestAnimationFrame(animate);
+            } else {
+              this.completeLoading();
+            }
+          };
+
+          animate();
+        }
+
+        updateProgress(targetProgress) {
+          this.progress = targetProgress;
+
+          // Update image reveal effect
+          this.updateImageReveal();
+        }           
+
+        updateImageReveal() {
+          // Update the reveal mask
+          this.revealMask.style.setProperty("--progress", `${this.progress}%`);
+
+          // Gradually remove grayscale as loading progresses
+          const grayscaleAmount = Math.max(0, 100 - this.progress);
+          const brightness = 0.7 + (this.progress / 100) * 0.3;
+          this.loadingImage.style.filter = `grayscale(${grayscaleAmount}%) brightness(${brightness})`;
+        }
+
+        completeLoading() {
+          // Final reveal - full color
+          this.loadingImage.classList.remove("grayscale");
+          this.loadingImage.style.filter = "none";
+
+          // Apply blur effect
+          setTimeout(() => {
+            // Remove blur and show main content
+            setTimeout(() => {
+              this.loadingScreen.classList.add("blur");
+              this.loadingScreen.classList.add("hidden");
+              this.mainContent.classList.add("loaded");
+
+              // Play background music
+              this.playBackgroundMusic();
+
+              // Remove loading screen from DOM after transition
+              setTimeout(() => {
+                this.loadingScreen.style.display = "none";
+              }, 500);
+            }, 800);
+          }, 500);
+        }
+
+        playBackgroundMusic() {
+          // Try to play background music
+          this.backgroundMusic.play().catch((error) => {
+            console.log("Audio autoplay was prevented:", error);
+            // Add a user interaction handler to play music
+            document.addEventListener(
+              "click",
+              () => {
+                this.backgroundMusic.play();
+              },
+              { once: true },
+            );
+          });
+        }
+      }
+
+      // Initialize loading screen when page loads
+      document.addEventListener("DOMContentLoaded", () => {
+        new LoadingScreen();
+      });
+
+      // Main website functions
+      function showDeviceInfo() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const isMobile = width <= 768;
+
+        const info = document.getElementById("device-info");
+        info.innerHTML = `
                 Screen: ${width}×${height}<br>
-                Layout: ${isMobile ? 'Mobile (Portrait)' : 'Desktop (Landscape)'}<br>
+                Layout: ${isMobile ? "Mobile (Portrait)" : "Desktop (Landscape)"}<br>
                 Status: Fully Loaded
             `;
-        }
+      }
 
-        // Show device info after loading
-        window.addEventListener('load', () => {
-            setTimeout(showDeviceInfo, 3000); // Delay to ensure loading is complete
-        });
+      // Show device info after loading
+      window.addEventListener("load", () => {
+        setTimeout(showDeviceInfo, 3000); // Delay to ensure loading is complete
+      });
     </script>
-</body>
+  </body>
 </html>
