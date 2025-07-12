@@ -7,8 +7,25 @@
     <script src="script.js"></script>
     <link rel="icon" type="image/x-icon" href="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlAuA5eDqVxulmTgkGYPe3SLwjqFof8JDhOtZM" />
 
+    <!-- Preload Audio and Videos --> 
+    <link rel="preload" href="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlGaApKpBCIotdCJDbiclE3YZMjH0aBAXzhp4L" as="audio"/>
+    <link rel="preload" href="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlPy5WxfSyO4JjIUNg0VoWzmQnPviRr9FhAXKs" as="video"/>
+    <link rel="preload" href="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlTOOSc7YrnA7uI56sZG0mzXOS8YQqVD2UdNly" as="video"/>
+
     <title>Aigis</title>
   </head>
+  <nav>
+    <div class="nav-container">
+      <div class="button-container">
+        <button onclick="scrollToSection(0)">Home</button>
+        <button onclick="scrollToSection(1)">Software</button>
+        <button onclick="scrollToSection(2)">Websites</button>
+        <button onclick="scrollToSection(3)">Apps</button>
+        <button onclick="scrollToSection(4)">Games</button>
+        <button onclick="scrollToSection(5)">FAQ</button>
+      </div>
+    </div>
+  </nav>
   <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
@@ -33,18 +50,6 @@
       Your browser does not support the audio element.
     </audio>
 
-    <nav>
-      <div class="nav-container">
-        <div class="button-container">
-          <button onclick="scrollToSection(0)">Home</button>
-          <button onclick="scrollToSection(1)">Software</button>
-          <button onclick="scrollToSection(2)">Apps</button>
-          <button onclick="scrollToSection(3)">Websites</button>
-          <button onclick="scrollToSection(4)">FAQ</button>
-        </div>
-      </div>
-    </nav>
-
     <!-- Main Website Content -->
     <div class="main-content" id="mainContent"></div>
     <div class="aspect-container">
@@ -64,6 +69,9 @@
         </div>
         <div id="section5" class="section section5">
           <h2>Section 5</h2>
+        </div>
+        <div id="section6" class="section section6">
+          <h2>Section 6</h2>
         </div>
       </div>
     </div>
@@ -170,7 +178,7 @@
       // Main website functions
       function showDeviceInfo() {
         const width = window.innerWidth;
-        const height = window.innerHeight;
+        const height = window.innerHeight;  
         const isMobile = width <= 768;
 
         const info = document.getElementById("device-info");

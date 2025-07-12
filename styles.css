@@ -1,3 +1,7 @@
+/* import */
+
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -124,6 +128,8 @@ nav {
   background-color: rgba(0, 0, 0, 0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 16px;
+  z-index: 99;
+  position: fixed;
 }
 
 .nav-container {
@@ -132,16 +138,20 @@ nav {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  z-index: inherit;
 }
 
 button {
   padding: 8px 16px;
-  background-color: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
   transition: all 0.2s;
+  background: transparent;
+  text-decoration: none;
+  font-family: "Archivo", sans-serif;
+  font-weight: Bold;
+  color: white;
+  border: transparent;
 }
 
 .button-container {
@@ -189,15 +199,17 @@ button:hover {
   font-weight: bold;
 }
 
-/*
 .section1 {
-  background-color: #667eea;
+  background-image: url('https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlPy5WxfSyO4JjIUNg0VoWzmQnPviRr9FhAXKs');
+  background-size: cover;
+  filter:opacity(90%);
 }
 
 .section2 {
-  background-color: antiquewhite;
+  background-image: url('https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlTOOSc7YrnA7uI56sZG0mzXOS8YQqVD2UdNly');
+  background-size: cover;
+    filter:opacity(90%);
 }
-*/
 
 /* Desktop background - landscape 1920x1080 */
 @media (min-width: 769px) {
