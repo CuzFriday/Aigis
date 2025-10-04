@@ -208,12 +208,19 @@ button:hover {
   opacity: 1;
 }
 
+.BackgroundVideo {
+  width: 100%;
+  height: auto;
+}
+
 .AtUsername {
   width: 6rem;
   height: 1rem;
-  position: absolute;
-  top: 56rem;
-  right: 1rem;
+  position:absolute;
+  right: auto;
+  top: auto;
+  margin-right: -92%;
+  margin-top: 90vh;
   filter: opacity(90%);
 }
 
@@ -223,10 +230,14 @@ button:hover {
   height: 5rem;
   position: absolute;
   display: flex;
-  right: -19.7rem;
-  top: 36rem;
+
+  margin-right: -90vw;
+  margin-top: 40vh;
+
+
   rotate: -60deg;
 
+  /* Text Configs */
   color: rgba(110, 110, 110, 0.667);
   background-color: #000;
 
@@ -244,25 +255,25 @@ button:hover {
 }
 
 .LeftHorizontalBand {
-  width: 50rem;
+  width: 60rem;
   height: 5rem;
   position: absolute;
 
-  right: 75rem;
-  top: 5rem;
+  margin-right: 65%;
+  margin-top: -80vh;
 
   transform: skewX(-5deg);
-  background-color: #111111;
+  background-color: #000;
 }
 
 .LHB1 {
-  background-color: #111111;
+  background-color: #000;
 }
 .LHB2 {
-  width: 35rem;
 
-  right: 75rem;
-  top: 10.3rem;
+  width: 40rem;
+  margin-top: -61.5vh;
+  margin-right: 49%;
 }
 
 .BannerVideo {
@@ -273,6 +284,26 @@ button:hover {
 .NameImage {
   position: absolute;
   right: 5rem;
+}
+
+/* Social Logo's */
+
+.YoutubeIcon {
+  width: 5rem;
+  height: 5rem;
+
+  margin-left: 20%;
+
+  filter: invert();
+}
+
+.TwitchIcon {
+  width: 4.5rem;
+  height: 4.5rem;
+
+  margin-left: 1%;
+
+  filter: invert();
 }
 
 /* Section styles */
@@ -306,8 +337,8 @@ button:hover {
   }
 
   .BackgroundVideo {
+    scale: 5;
     position: absolute;
-    right: auto;
     margin-right: 80rem;
   }
 
@@ -317,9 +348,11 @@ button:hover {
    bottom: auto;
    right: auto;
    left: auto;
-
-    margin-top: auto;
-    margin-bottom: 2rem;
+    
+   margin-right: auto;
+   margin-left: auto;
+   margin-top: auto;
+   margin-bottom: 2rem;
   }
 }
 
