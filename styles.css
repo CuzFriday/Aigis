@@ -114,6 +114,31 @@ html {
   }
 }
 
+/* Text Scrolling */
+
+.marquee {
+  margin: 0 auto;
+  white-space: nowrap;
+  position: absolute;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+
+  animation-delay: 2.5s;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
 /* Mobile adjustments for loading screen */
 @media (max-width: 768px) {
   .image-container {
@@ -176,10 +201,78 @@ button:hover {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.5s ease-in;
+  background-color: #18c0fb;
 }
 
 .main-content.loaded {
   opacity: 1;
+}
+
+.AtUsername {
+  width: 6rem;
+  height: 1rem;
+  position: absolute;
+  top: 56rem;
+  right: 1rem;
+  filter: opacity(90%);
+}
+
+/* Banner and contents */
+.RightVerticalBand {
+  width: 60rem;
+  height: 5rem;
+  position: absolute;
+  display: flex;
+  right: -19.7rem;
+  top: 36rem;
+  rotate: -60deg;
+
+  color: rgba(110, 110, 110, 0.667);
+  background-color: #000;
+
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+
+  opacity: 100%;
+  word-spacing: 1.0rem;
+}
+
+.KeepOut {
+  font-size: 2rem;
+  white-space: nowrap;
+}
+
+.LeftHorizontalBand {
+  width: 50rem;
+  height: 5rem;
+  position: absolute;
+
+  right: 75rem;
+  top: 5rem;
+
+  transform: skewX(-5deg);
+  background-color: #111111;
+}
+
+.LHB1 {
+  background-color: #111111;
+}
+.LHB2 {
+  width: 35rem;
+
+  right: 75rem;
+  top: 10.3rem;
+}
+
+.BannerVideo {
+  position: absolute;
+  size: 10000px;
+}
+
+.NameImage {
+  position: absolute;
+  right: 5rem;
 }
 
 /* Section styles */
@@ -199,29 +292,34 @@ button:hover {
   font-weight: bold;
 }
 
-.section1 {
-  background-image: url('https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlPy5WxfSyO4JjIUNg0VoWzmQnPviRr9FhAXKs');
-  background-size: cover;
-  filter:opacity(90%);
-}
-
-.section2 {
-  background-image: url('https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlTOOSc7YrnA7uI56sZG0mzXOS8YQqVD2UdNly');
-  background-size: cover;
-    filter:opacity(90%);
-}
-
 /* Desktop background - landscape 1920x1080 */
 @media (min-width: 769px) {
-  .main-content {
-    background-color: #f6f5f3;
+  .mobileview {
+    display: none;
   }
 }
 
 /* Mobile background - portrait 1080x1920 */
 @media (max-width: 768px) {
-  .main-content {
-    background-color: #f6f5f3;
+  .desktopview {
+    display: none;
+  }
+
+  .BackgroundVideo {
+    position: absolute;
+    right: auto;
+    margin-right: 80rem;
+  }
+
+  .AtUsername {
+   position: relative;
+   top: auto;
+   bottom: auto;
+   right: auto;
+   left: auto;
+
+    margin-top: auto;
+    margin-bottom: 2rem;
   }
 }
 

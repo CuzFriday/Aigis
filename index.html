@@ -2,30 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js"></script>
     <link rel="icon" type="image/x-icon" href="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlAuA5eDqVxulmTgkGYPe3SLwjqFof8JDhOtZM" />
 
     <!-- Preload Audio and Videos --> 
+    <link rel="preconnect" href="https://bg054ezvk2.ufs.sh">
+    
     <link rel="preload" href="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlGaApKpBCIotdCJDbiclE3YZMjH0aBAXzhp4L" as="audio"/>
     <link rel="preload" href="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlPy5WxfSyO4JjIUNg0VoWzmQnPviRr9FhAXKs" as="video"/>
-    <link rel="preload" href="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlTOOSc7YrnA7uI56sZG0mzXOS8YQqVD2UdNly" as="video"/>
 
     <title>Aigis</title>
+
   </head>
-  <nav>
-    <div class="nav-container">
-      <div class="button-container">
-        <button onclick="scrollToSection(0)">Home</button>
-        <button onclick="scrollToSection(1)">Software</button>
-        <button onclick="scrollToSection(2)">Websites</button>
-        <button onclick="scrollToSection(3)">Apps</button>
-        <button onclick="scrollToSection(4)">Games</button>
-        <button onclick="scrollToSection(5)">FAQ</button>
-      </div>
-    </div>
-  </nav>
+
   <body>
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
@@ -51,32 +42,26 @@
     </audio>
 
     <!-- Main Website Content -->
-    <div class="main-content" id="mainContent"></div>
-    <div class="aspect-container">
-      <!-- Horizontal scrollable content -->
-      <div id="scrollContainer" class="scroll-container">
-        <div id="section1" class="section section1">
-          <h2>Section 1</h2>  
-        </div>
-        <div id="section2" class="section section2">
-          <h2>Section 2</h2>
-        </div>
-        <div id="section3" class="section section3">
-          <h2>Section 3</h2>
-        </div>
-        <div id="section4" class="section section4">
-          <h2>Section 4</h2>
-        </div>
-        <div id="section5" class="section section5">
-          <h2>Section 5</h2>
-        </div>
-        <div id="section6" class="section section6">
-          <h2>Section 6</h2>
-        </div>
+    <div class="main-content" id="mainContent">
+      <video class="BackgroundVideo" loop autoplay muted src="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlPy5WxfSyO4JjIUNg0VoWzmQnPviRr9FhAXKs"></video>
+      
+      <!-- @ -->
+      <img class="AtUsername" src="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnldEXoTjphKYmB35x4Xcs9OuvwaNd2HQeLk6lq">  
+      
+      <!-- Visual Images -->
+       <div class="RightVerticalBand RVB1 desktopview"> 
+        <p class="marquee">
+          <span class="KeepOut"> KEEP OUT  KEEP OUT  KEEP OUT  KEEP OUT  KEEP OUT  KEEP OUT KEEP OUT KEEP OUT KEEP OUT KEEP OUT KEEP OUT KEEP OUT KEEP OUT KEEP OUT KEEP OUT KEEP OUT KEEP OUT</span>
+        </p>
       </div>
+       <div class="LeftHorizontalBand LHB1 desktopview"></div>
+       <div class="LeftHorizontalBand LHB2 desktopview"></div>
     </div>
+    <div class="aspect-container"></div>
+
     <script>
       class LoadingScreen {
+
         constructor() {
           this.progress = 0;
           this.loadingScreen = document.getElementById("loadingScreen");
@@ -135,9 +120,7 @@
           this.loadingImage.classList.remove("grayscale");
           this.loadingImage.style.filter = "none";
 
-          // Apply blur effect
           setTimeout(() => {
-            // Remove blur and show main content
             setTimeout(() => {
               this.loadingScreen.classList.add("blur");
               this.loadingScreen.classList.add("hidden");
@@ -169,30 +152,12 @@
           });
         }
       }
-
+     
       // Initialize loading screen when page loads
       document.addEventListener("DOMContentLoaded", () => {
         new LoadingScreen();
       });
 
-      // Main website functions
-      function showDeviceInfo() {
-        const width = window.innerWidth;
-        const height = window.innerHeight;  
-        const isMobile = width <= 768;
-
-        const info = document.getElementById("device-info");
-        info.innerHTML = `
-                Screen: ${width}×${height}<br>
-                Layout: ${isMobile ? "Mobile (Portrait)" : "Desktop (Landscape)"}<br>
-                Status: Fully Loaded
-            `;
-      }
-
-      // Show device info after loading
-      window.addEventListener("load", () => {
-        setTimeout(showDeviceInfo, 3000); // Delay to ensure loading is complete
-      });
     </script>
   </body>
 </html>
