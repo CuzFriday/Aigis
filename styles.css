@@ -201,7 +201,7 @@ button:hover {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.5s ease-in;
-  background-color: #18c0fb;
+  background-color: #c0b444;
 }
 
 .main-content.loaded {
@@ -209,6 +209,7 @@ button:hover {
 }
 
 .BackgroundVideo {
+  position: absolute;
   width: 100%;
   height: auto;
 }
@@ -222,20 +223,15 @@ button:hover {
   margin-right: -92%;
   margin-top: 90vh;
   filter: opacity(90%);
+
 }
 
 /* Banner and contents */
 .RightVerticalBand {
-  width: 60rem;
-  height: 5rem;
+  width: 100%;
+  height: 7vh;
   position: absolute;
   display: flex;
-
-  margin-right: -90vw;
-  margin-top: 40vh;
-
-
-  rotate: -60deg;
 
   /* Text Configs */
   color: rgba(110, 110, 110, 0.667);
@@ -247,43 +243,79 @@ button:hover {
 
   opacity: 100%;
   word-spacing: 1.0rem;
+
+  box-shadow: 0 0 8px #2c2c2c;
 }
 
-.KeepOut {
-  font-size: 2rem;
+/* Siblings */
+.RVB1  {
+  margin-right: -90vw;
+  margin-top: 40vh;
+
+  rotate: -60deg;
+}
+
+.RVB2 {
+  margin-right: -50vw;
+  margin-top: 60vh;
+
+  rotate: -20deg;
+}
+
+.RightVerticalBand p {
+  font-size: clamp(1rem, 1vw + 1rem, 3rem);
   white-space: nowrap;
 }
 
+/* Banner and contents */
 .LeftHorizontalBand {
-  width: 60rem;
-  height: 5rem;
-  position: absolute;
 
-  margin-right: 65%;
-  margin-top: -80vh;
+  display: inline-block;
+  position: relative;
 
-  transform: skewX(-5deg);
+  height: 800px;
+  width: 800px;
+
+  max-width: 100%;
+  min-width: 46%;
+
+  max-height: 80%;
+  min-height: 70%;
+
+  margin-right: 56vw;
+}
+
+.LeftHorizontalBand > div {
+  height: 70px;
+
+  max-height: 15%;
+  min-height: 10%;
+
+  max-width: 100%;
+
+  margin-top: 1%;
+
+  transform: skew(-20deg);
+
   background-color: #000;
 }
 
+/* Siblings */
 .LHB1 {
-  background-color: #000;
+  width: 20px;
+  min-width: 80%;
 }
+
 .LHB2 {
-
-  width: 40rem;
-  margin-top: -61.5vh;
-  margin-right: 49%;
+  margin-left: 15%;
+  width: 5px;
+  min-width: 65%;
 }
 
-.BannerVideo {
-  position: absolute;
-  size: 10000px;
-}
-
-.NameImage {
-  position: absolute;
-  right: 5rem;
+.LHB3 {
+  margin-left: 15%;
+  width: 5px;
+  min-width: 65%;
 }
 
 /* Social Logo's */
