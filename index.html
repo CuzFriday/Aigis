@@ -10,8 +10,11 @@
     <!-- Preload Audio and Videos --> 
     <link rel="preconnect" href="https://bg054ezvk2.ufs.sh">
     
+    <!-- Audios -->
     <link rel="preload" href="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlGaApKpBCIotdCJDbiclE3YZMjH0aBAXzhp4L" as="audio"/>
-
+    <!-- Images -->
+    <link rel="preload" href="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlUqkwMzFzK8H6CkfA9R3FpoZYdljVEPOnU25G" as="image"/>
+    <!-- Videos -->
     <link rel="preload" href="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlTOOSc7YrnA7uI56sZG0mzXOS8YQqVD2UdNly" as="video"/>
 
     <title>Aigis</title>
@@ -42,13 +45,14 @@
       Your browser does not support the audio element.
     </audio>
 
+    <div class="BackgroundImage"></div>
+
     <!-- Main Website Content -->
     <div class="main-content" id="mainContent">
       <video class="BackgroundVideo" loop autoplay muted src="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnlTOOSc7YrnA7uI56sZG0mzXOS8YQqVD2UdNly"></video>
       
       <!-- @ -->
-      <img class="AtUsername" src="https://bg054ezvk2.ufs.sh/f/4UtAvpGP2wnldEXoTjphKYmB35x4Xcs9OuvwaNd2HQeLk6lq">  
-      
+      <div class="AtUsername"> <button onclick= "window.open('https://atlus.com/','_blank')">@ATLUS</button > </div>
       <!-- Visual Images -->
       <div class="RightVerticalBand RVB1 desktopview"> 
         <p class="marquee">
@@ -62,10 +66,16 @@
         </p>
       </div>
 
-      <div class="LeftHorizontalBand desktopview">
-        <div class="LHB1"></div>
-        <div class="LHB2"></div>
-        <div class="LHB3"></div>
+      <div class="LeftHorizontalBand">
+        <div class="LHB1" id="SoftwareButton"><button>Softwares</button><p class="LV1">Lv</p></div>
+        <div class="LHB2" id="AppsButton"><button>Apps</button><p class="LV2">Lv</p></div>
+        <div class="LHB3" id="ToolsButton"><button>Tools</button><p class="LV3">Lv</p></div>
+        <div class="LHB4" id="ContactButton"><button>Contact</button><p class="LV4">Lv</p></div>
+      </div>
+
+      <div class="Guide">
+        <p class="DescriptionText">Which option are you looking for?</p>
+        <P class="UnderlineText">Guide <hr> </P> 
       </div>
 
     <div class="aspect-container"></div>
