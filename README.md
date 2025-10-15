@@ -6,7 +6,7 @@ https://aigis-stable.vercel.app/
 Mobile and Desktop Supported. (Ipad, not so much lol)
 
 
-@Copyright 2025
+©Copyright 2025
 This content is a work of parody and critique, created strictly for entertainment and personal purposes. It falls under the principles of Fair Use as outlined in Section 107 of the United States Copyright Act.
 Under this law, allowance is made for "fair use" for purposes such as criticism, comment, news reporting, teaching, scholarship, and research. Fair use is a use permitted by copyright statute that might otherwise be infringing.
 
